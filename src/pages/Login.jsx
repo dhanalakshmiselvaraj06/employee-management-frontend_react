@@ -29,7 +29,10 @@ function Login({ setPage, setOtpEmail }) {
 
             setOtpEmail(email);
 
-            setPage("otp");
+            /* setPage("otp"); */
+            localStorage.setItem("authenticated", "true");
+
+setPage("dashboard");
 
         } catch (error) {
 

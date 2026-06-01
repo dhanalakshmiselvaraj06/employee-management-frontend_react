@@ -4,7 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import Register from "./pages/Register";
 import Login from "./pages/Login";
-import VerifyOtp from "./pages/VerifyOtp";
+/* import VerifyOtp from "./pages/VerifyOtp"; */
 
 import Dashboard from "./pages/Dashboard";
 
@@ -33,7 +33,7 @@ function App() {
         )
     }
 
-    {
+    {/* {
       page === "otp"
         && (
           <VerifyOtp
@@ -41,7 +41,7 @@ function App() {
   setPage={setPage}
 />
         )
-    }
+    } */}
     {
   page === "dashboard"
     && <Dashboard />
