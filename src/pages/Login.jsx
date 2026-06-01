@@ -9,38 +9,32 @@ function Login({ setPage, setOtpEmail }) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
-    const handleLogin = async () => {
+   const handleLogin = async () => {
 
-        try {
+    try {
 
-            await axios.post(
-                "https://employee-management-system-java-eda7.onrender.com/auth/login",
-                {
-                    email,
-                    password
-                }
-            );
+        await axios.post(
+            "https://employee-management-system-java-eda7.onrender.com/auth/login",
+            {
+                email,
+                password
+            }
+        );
 
-            await axios.post(
-                "https://employee-management-system-java-eda7.onrender.com/auth/send-otp?email=" + email
-            );
+        toast.success("Login Successful");
 
-            toast.success("OTP sent to your email");
+        localStorage.setItem("authenticated", "true");
 
-            setOtpEmail(email);
+        setPage("dashboard");
 
-            /* setPage("otp"); */
-            localStorage.setItem("authenticated", "true");
+    } catch (error) {
 
-setPage("dashboard");
+        console.error(error);
 
-        } catch (error) {
+        toast.error("Login Failed");
+    }
+};
 
-            console.error(error);
-
-            toast.error("Login Failed");
-        }
-    };
 
     return (
         <div className="container">
