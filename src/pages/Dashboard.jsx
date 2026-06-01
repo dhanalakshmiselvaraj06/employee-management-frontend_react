@@ -184,8 +184,6 @@ for (const dept in departmentCount) {
                 <button
     className="sidebar-button"
     onClick={() => {
-
-        l
         localStorage.removeItem("authenticated");
         window.location.reload();
     }}
