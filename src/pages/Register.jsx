@@ -13,7 +13,7 @@ function Register() {
         try {
 
             const response = await axios.post(
-                "http://localhost:8080/auth/register",
+                "https://employee-management-system-java-eda7.onrender.com/auth/register",
                 {
                     email,
                     password
